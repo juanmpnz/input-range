@@ -4,7 +4,7 @@ const useRangesValues = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["values"],
     queryFn: () =>
-      fetch("http://demo6445295.mockable.io/ranges").then((res) => res.json()),
+      fetch("https://demo6445295.mockable.io/ranges").then((res) => res.json()),
     staleTime: Infinity,
   });
 
