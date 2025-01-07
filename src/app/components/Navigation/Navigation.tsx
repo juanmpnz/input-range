@@ -3,7 +3,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { menuItems } from "@/utils/utils";
 
-export const Navigation = () => {
+export const Navigation: React.FC = () => {
 	const router = useRouter();
 	return (
 		<div className="flex flex-row gap-8 border-b pb-4">

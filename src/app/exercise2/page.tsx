@@ -2,10 +2,10 @@
 import { Range } from "../components";
 import useRangesValues from "@/hooks/useRangesValues";
 
-export const ExerciseTwo = () => {
+const ExerciseTwo: React.FC = () => {
 	const { data, isLoading, error } = useRangesValues();
 	const exerciseTwoValues = data?.exerciseTwo;
- 
+
 	const handleRangeChange = (valueMin: number, valueMax: number) => {
 		console.log(valueMax, "MAX VALUE");
 		console.log(valueMin, "MIN VALUE");
@@ -15,9 +15,7 @@ export const ExerciseTwo = () => {
 	return (
 		<div>
 			<h1 className="my-4 font-bold">Exercise 2</h1>
-			{!isLoading && !error && (
-				<Range fixedValues={exerciseTwoValues} onChange={handleRangeChange} />
-			)}
+			{!isLoading && !error && <Range fixedValues={exerciseTwoValues} onChange={handleRangeChange} />}
 		</div>
 	);
 };

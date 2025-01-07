@@ -45,13 +45,13 @@ export const Range: FC<RangeProps> = ({ fixedValues = [], onChange }) => {
                 autoFocus
               />
             ) : (
-              <p>{value}</p>
+              <p>{value} €</p>
             )}
           </div>
         ))}
       </div>
       <div className="flex flex-row items-center">
-        <div className="w-full mx-auto px-12">
+        <div className="w-full px-16">
           <div className="relative w-full h-1 bg-gray-500 rounded">
             <div
               className="absolute h-1 bg-black rounded"

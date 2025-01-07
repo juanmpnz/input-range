@@ -63,10 +63,10 @@ const useRange = (fixedValues: number[] = []) => {
 		startDrag,
 		handleMove,
 		handleEdit,
+		setEditing,
 		values,
 		maxValue,
 		minValue,
-		setEditing,
 		editing,
 	};
 };

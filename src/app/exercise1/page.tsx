@@ -2,8 +2,7 @@
 import React from "react";
 import { Range } from "../components";
 
-export const ExerciseOne = () => {
-
+const ExerciseOne: React.FC = () => {
 	const handleRangeChange = (valueMin: number, valueMax: number) => {
 		console.log(valueMax, "MAX VALUE");
 		console.log(valueMin, "MIN VALUE");
