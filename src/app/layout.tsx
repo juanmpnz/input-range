@@ -1,33 +1,35 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+"use client";
+import { useState } from "react";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "./components/Navigation/Navigation";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
-	subsets: ["latin"],
+const inter = Inter({
+   variable: "--font-inter",
+   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
+const robotoMono = Roboto_Mono({
+   variable: "--font-roboto-mono",
+   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-	title: "Capitole Challenge",
-};
 
 export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
-	return (
-		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased p-8`}>
-				<Navigation />
-				{children}
-			</body>
-		</html>
-	);
+   children,
+}: {
+   children: React.ReactNode;
+}) {
+   const [queryClient] = useState(() => new QueryClient());
+
+   return (
+      <html lang="en">
+         <body className={`${inter.variable} ${robotoMono.variable} antialiased p-8`}>
+            <Navigation />
+            <QueryClientProvider client={queryClient}>
+               {children}
+            </QueryClientProvider>
+         </body>
+      </html>
+   );
 }

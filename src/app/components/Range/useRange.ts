@@ -1,13 +1,11 @@
 import { useState } from "react";
 
 const useRange = (fixedValues: number[] = []) => {
-	const [values, setValues] = useState(() => 
-		fixedValues.length > 0 
-			? [fixedValues[0], fixedValues[fixedValues.length - 1]] 
-			: [0, 100]
+	const [values, setValues] = useState(() =>
+		fixedValues.length > 0 ? [fixedValues[0], fixedValues[fixedValues.length - 1]] : [0, 100]
 	);
 	const [editing, setEditing] = useState<number | null>(null);
- 
+
 	const maxValue = fixedValues.length > 0 ? Math.max(...fixedValues) : 100;
 	const minValue = fixedValues.length > 0 ? Math.min(...fixedValues) : 0;
 
