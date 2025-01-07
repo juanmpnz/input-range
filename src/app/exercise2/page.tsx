@@ -15,6 +15,7 @@ const ExerciseTwo: React.FC = () => {
 	return (
 		<div>
 			<h1 className="my-4 font-bold">Exercise 2</h1>
+			{error && <h1 className="text-red-600 font-bold">Network error</h1>}
 			{!isLoading && !error && <Range fixedValues={exerciseTwoValues} onChange={handleRangeChange} />}
 		</div>
 	);
